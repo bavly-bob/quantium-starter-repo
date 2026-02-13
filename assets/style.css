@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+  color: #112022;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 190, 92, 0.28) 0%, rgba(255, 190, 92, 0) 38%),
+    radial-gradient(circle at 85% 10%, rgba(58, 178, 176, 0.26) 0%, rgba(58, 178, 176, 0) 45%),
+    linear-gradient(140deg, #f9fbf4 0%, #eef4f8 100%);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+}
+
+.dashboard-card {
+  width: min(1080px, 100%);
+  border-radius: 22px;
+  padding: 30px 28px 20px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 16px 36px rgba(31, 50, 59, 0.18);
+  backdrop-filter: blur(5px);
+  animation: rise-in 550ms ease-out;
+}
+
+.page-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  letter-spacing: 0.03em;
+  color: #0b2f39;
+}
+
+.page-subtitle {
+  margin: 10px 0 22px;
+  text-align: center;
+  color: #2f4b52;
+  font-size: 1.02rem;
+}
+
+.radio-wrapper {
+  background: rgba(236, 244, 247, 0.95);
+  border: 1px solid rgba(126, 156, 164, 0.45);
+  border-radius: 14px;
+  padding: 14px 14px 8px;
+  margin-bottom: 16px;
+}
+
+.radio-heading {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1e4651;
+}
+
+.region-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.region-selector label {
+  margin: 0 0 8px;
+  background: #ffffff;
+  border: 1px solid #9cb8bf;
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: #15363e;
+  font-weight: 600;
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.region-selector label:hover {
+  transform: translateY(-1px);
+  border-color: #4d8f95;
+  box-shadow: 0 5px 14px rgba(15, 58, 67, 0.15);
+}
+
+.sales-chart {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(132, 156, 163, 0.45);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    padding: 14px;
+    align-items: flex-start;
+  }
+
+  .dashboard-card {
+    margin-top: 8px;
+    padding: 22px 14px 14px;
+  }
+
+  .region-selector label {
+    padding: 7px 10px;
+  }
+}
